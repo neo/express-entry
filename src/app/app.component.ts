@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-import {
-  MdSlideToggleChange
-} from '@angular/material';
-
 @Component({
   selector: 'ee-root',
   templateUrl: './app.component.html',
@@ -11,8 +7,4 @@ import {
 })
 export class AppComponent {
   spouse = false;
-
-  toggleSpouse(event: MdSlideToggleChange) {
-    this.spouse = event.checked;
-  }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import {
   MdSlideToggleModule
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     MdSlideToggleModule,
+    FormsModule,
     BrowserModule
   ],
   providers: [],

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 import {
-  AGES, Age
+  AGES,
+  PointOption
 } from './points';
 
 @Component({
@@ -17,7 +18,7 @@ export class AppComponent {
   };
 
   spouse = false;
-  age: Age;
+  age: PointOption;
 
   calc() {
     const spouse = this.spouse ? 'withSpouse' : 'withoutSpouse';

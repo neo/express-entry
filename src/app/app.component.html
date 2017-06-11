@@ -1,5 +1,28 @@
-<md-slide-toggle
-  [(ngModel)]="spouse"
->
-  With a spouse or common-law partner
-</md-slide-toggle>
+<header>
+  <md-slide-toggle
+    [(ngModel)]="spouse"
+    (change)="calc()"
+  >
+    With a spouse or common-law partner
+  </md-slide-toggle>
+</header>
+
+<section>
+  <h2>A. Core / human capital factors</h2>
+  <md-select
+    placeholder="Age"
+    [(ngModel)]="age"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let age of ages"
+      [value]="age"
+    >
+      {{ age.age }}
+    </md-option>
+  </md-select>
+  <p>
+    <span>Score:</span>
+    <span>{{ score.age }}</span>
+  </p>
+</section>

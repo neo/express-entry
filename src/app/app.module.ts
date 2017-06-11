@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
+  MdRadioModule,
   MdSelectModule,
   MdSlideToggleModule
 } from '@angular/material';
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    MdRadioModule,
     MdSelectModule,
     MdSlideToggleModule,
     BrowserAnimationsModule,

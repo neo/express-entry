@@ -1,0 +1,11 @@
+.mat-radio-button {
+  display: block;
+
+  /deep/ .mat-radio-label {
+    white-space: normal;
+  }
+
+  /deep/ .mat-radio-container {
+    flex-shrink: 0;
+  }
+}

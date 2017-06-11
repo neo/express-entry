@@ -26,3 +26,14 @@ export const AGES: Array<PointOption> = [
   {text: '44', withSpouse: 5, withoutSpouse: 6},
   {text: '45 or more', withSpouse: 0, withoutSpouse: 0}
 ];
+
+export const EDUCATION_LEVELS: Array<PointOption> = [
+  { text: "Less than secondary school (high school)", withSpouse: 0, withoutSpouse: 0},
+  { text: "Secondary diploma (high school graduation)", withSpouse: 28, withoutSpouse: 30},
+  { text: "One-year degree, diploma or certificate from  a university, college, trade or technical school, or other institute", withSpouse: 84, withoutSpouse: 90},
+  { text: "Two-year program at a university, college, trade or technical school, or other institute", withSpouse: 91, withoutSpouse: 98},
+  { text: "Bachelor's degree OR  a three or more year program at a university, college, trade or technical school, or other institute", withSpouse: 112, withoutSpouse: 120},
+  { text: "Two or more certificates, diplomas, or degrees. One must be for a program of three or more years", withSpouse: 119, withoutSpouse: 128},
+  { text: "Master's degree, OR professional degree needed to practice in a licensed profession (For “professional degree,” the degree program must have been in: medicine, veterinary medicine, dentistry, optometry, law, chiropractic medicine, or pharmacy.)", withSpouse: 126, withoutSpouse: 135},
+  { text: "Doctoral level university degree (Ph.D.)", withSpouse: 140, withoutSpouse: 150},
+];

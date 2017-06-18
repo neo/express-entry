@@ -9,7 +9,8 @@
 
 <section>
   <h2>A. Core / human capital factors</h2>
-   <h3>Age</h3>
+
+  <h3>Age &mdash; Score: {{ score.age }}</h3>
   <md-select
     placeholder="Age"
     [(ngModel)]="age"
@@ -22,11 +23,8 @@
       {{ age.text }}
     </md-option>
   </md-select>
-  <p>
-    <span>Score:</span>
-    <span>{{ score.age }}</span>
-  </p>
-  <h3>Level of Education</h3>
+
+  <h3>Level of Education &mdash; Score: {{ score.educationLevel }}</h3>
   <md-radio-group
     [(ngModel)]="educationLevel"
     (change)="calc()"
@@ -38,8 +36,112 @@
       {{ level.text }}
     </md-radio-button>
   </md-radio-group>
-  <p>
-    <span>Score:</span>
-    <span>{{ score.educationLevel }}</span>
-  </p>
+
+  <h3>Official languages proficiency</h3>
+  <h4>first official language &mdash; score: {{ score.language }}</h4>
+  <md-select
+    placeholder="Reading"
+    [(ngModel)]="reading"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of clbLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Writing"
+    [(ngModel)]="writing"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of clbLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Listening"
+    [(ngModel)]="listening"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of clbLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Speaking"
+    [(ngModel)]="speaking"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of clbLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-slide-toggle
+    [(ngModel)]="secondLanguage"
+    (change)="calc()"
+    class="h4"
+  >
+    <h4>second official language &mdash; score: {{ score.language2 }}</h4>
+  </md-slide-toggle>
+  <section *ngIf="secondLanguage">
+    <md-select
+      placeholder="Reading"
+      [(ngModel)]="reading2"
+      (change)="calc()"
+    >
+      <md-option
+        *ngFor="let level of clbLevels2"
+        [value]="level"
+      >
+        {{ level.text }}
+      </md-option>
+    </md-select>
+    <md-select
+      placeholder="Writing"
+      [(ngModel)]="writing2"
+      (change)="calc()"
+    >
+      <md-option
+        *ngFor="let level of clbLevels2"
+        [value]="level"
+      >
+        {{ level.text }}
+      </md-option>
+    </md-select>
+    <md-select
+      placeholder="Listening"
+      [(ngModel)]="listening2"
+      (change)="calc()"
+    >
+      <md-option
+        *ngFor="let level of clbLevels2"
+        [value]="level"
+      >
+        {{ level.text }}
+      </md-option>
+    </md-select>
+    <md-select
+      placeholder="Speaking"
+      [(ngModel)]="speaking2"
+      (change)="calc()"
+    >
+      <md-option
+        *ngFor="let level of clbLevels2"
+        [value]="level"
+      >
+        {{ level.text }}
+      </md-option>
+    </md-select>
+  </section>
 </section>

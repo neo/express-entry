@@ -9,3 +9,19 @@
     flex-shrink: 0;
   }
 }
+
+.mat-slide-toggle {
+  display: block;
+
+  &.h4 {
+    height: 4rem;
+
+    /deep/ .mat-slide-toggle-content {
+      font-size: 1rem;
+    }
+  }
+}
+
+.mat-select {
+  min-width: 9rem;
+}

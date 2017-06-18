@@ -54,3 +54,12 @@ export const SECOND_CLB_LEVELS: Array<PointOption> = [
   {text: "CLB 7 or 8", withSpouse: 3, withoutSpouse: 3},
   {text: "CLB 9 or more", withSpouse: 6, withoutSpouse: 6}
 ];
+
+export const CANADIAN_WORK_EXPERIENCE: Array<PointOption> = [
+  {text: "Less than a year", withSpouse: 0, withoutSpouse: 0},
+  {text: "1 year", withSpouse: 35, withoutSpouse: 40},
+  {text: "2 years", withSpouse: 46, withoutSpouse: 53},
+  {text: "3 years", withSpouse: 56, withoutSpouse: 64},
+  {text: "4 years", withSpouse: 63, withoutSpouse: 72},
+  {text: "5 years or more", withSpouse: 70, withoutSpouse: 80}
+];

@@ -5,6 +5,7 @@ import {
   EDUCATION_LEVELS,
   CLB_LEVELS,
   SECOND_CLB_LEVELS,
+  CANADIAN_WORK_EXPERIENCE,
   PointOption
 } from './points';
 
@@ -18,17 +19,19 @@ export class AppComponent {
   educationLevels = EDUCATION_LEVELS;
   clbLevels = CLB_LEVELS;
   clbLevels2 = SECOND_CLB_LEVELS;
+  canadianWorkExperience = CANADIAN_WORK_EXPERIENCE;
 
   score = {
     age: 0,
-    educationLevel: 0,
+    education: 0,
     language: 0,
     language2: 0,
+    work: 0,
   };
 
   spouse = false;
   age: PointOption;
-  educationLevel: PointOption;
+  education: PointOption;
   reading: PointOption;
   writing: PointOption;
   listening: PointOption;
@@ -38,6 +41,8 @@ export class AppComponent {
   writing2: PointOption;
   listening2: PointOption;
   speaking2: PointOption;
+  work: PointOption;
+  totalA = 0;
 
   calc() {
     const spouse = this.spouse ? 'withSpouse' : 'withoutSpouse';
@@ -52,8 +57,11 @@ export class AppComponent {
 
     this.score = {
       age: this.age && this.age[spouse] || 0,
-      educationLevel: this.educationLevel && this.educationLevel[spouse] || 0,
+      education: this.education && this.education[spouse] || 0,
       language, language2,
+      work: this.work && this.work[spouse] || 0,
     };
+
+    this.totalA = this.score.age + this.score.education + this.score.language + this.score.language2 + this.score.work;
   }
 }

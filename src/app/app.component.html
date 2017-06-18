@@ -8,7 +8,7 @@
 </header>
 
 <section>
-  <h2>A. Core / human capital factors</h2>
+  <h2>A. Core / human capital factors &mdash; Total Score: {{ totalA }}</h2>
 
   <h3>Age &mdash; Score: {{ score.age }}</h3>
   <md-select
@@ -24,9 +24,9 @@
     </md-option>
   </md-select>
 
-  <h3>Level of Education &mdash; Score: {{ score.educationLevel }}</h3>
+  <h3>Level of Education &mdash; Score: {{ score.education }}</h3>
   <md-radio-group
-    [(ngModel)]="educationLevel"
+    [(ngModel)]="education"
     (change)="calc()"
   >
     <md-radio-button
@@ -144,4 +144,18 @@
       </md-option>
     </md-select>
   </section>
+
+  <h3>Canadian work experience &mdash; Score: {{ score.work }}</h3>
+  <md-select
+    placeholder="Work Experience"
+    [(ngModel)]="work"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of canadianWorkExperience"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
 </section>

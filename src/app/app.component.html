@@ -159,3 +159,84 @@
     </md-option>
   </md-select>
 </section>
+
+<section *ngIf="spouse">
+  <h2>B. Spouse or common-law partner factors &mdash; Total Score: {{ totalB }}</h2>
+
+  <h3>Spouse's level of education &mdash; Score: {{ score.spouseEducation }}</h3>
+  <md-radio-group
+    [(ngModel)]="spouseEducation"
+    (change)="calc()"
+  >
+    <md-radio-button
+      *ngFor="let level of spouseEducationLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-radio-button>
+  </md-radio-group>
+
+  <h3>Spouse's official languages proficiency &mdash; Score: {{ score.spouseLanguage }}</h3>
+  <md-select
+    placeholder="Reading"
+    [(ngModel)]="spouseReading"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of spouseCLBLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Writing"
+    [(ngModel)]="spouseWriting"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of spouseCLBLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Listening"
+    [(ngModel)]="spouseListening"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of spouseCLBLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+  <md-select
+    placeholder="Speaking"
+    [(ngModel)]="spouseSpeaking"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of spouseCLBLevels"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+
+  <h3>Spouse's Canadian work experience &mdash; Score: {{ score.spouseWork }}</h3>
+  <md-select
+    placeholder="Work Experience"
+    [(ngModel)]="spouseWork"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of spouseWorkExperience"
+      [value]="level"
+    >
+      {{ level.text }}
+    </md-option>
+  </md-select>
+</section>

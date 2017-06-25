@@ -63,3 +63,30 @@ export const CANADIAN_WORK_EXPERIENCE: Array<PointOption> = [
   {text: "4 years", withSpouse: 63, withoutSpouse: 72},
   {text: "5 years or more", withSpouse: 70, withoutSpouse: 80}
 ];
+
+export const SPOUSE_EDUCATION_LEVELS: Array<PointOption> = [
+  {text: "Less than secondary school (high school)", withSpouse: 0, withoutSpouse: 0},
+  {text: "Secondary school (high school graduation)", withSpouse: 2, withoutSpouse: 0},
+  {text: "One-year program at a university, college, trade or technical school, or other institute", withSpouse: 6, withoutSpouse: 0},
+  {text: "Two-year program at a university, college, trade or technical in school, or other institute", withSpouse: 7, withoutSpouse: 0},
+  {text: "Bachelor's degree OR  a three or more year program at a university, college, trade or technical school, or other institute", withSpouse: 8, withoutSpouse: 0},
+  {text: "Two or more certificates, diplomas, or degrees. One must be for a program of three or more years", withSpouse: 9, withoutSpouse: 0},
+  {text: "Master's degree, or professional degree needed to practice in a licensed profession (For “professional degree”, the degree program must have been in: medicine, veterinary medicine, dentistry, optometry, law, chiropractic medicine, or pharmacy.)", withSpouse: 10, withoutSpouse: 0},
+  {text: "Doctoral level university degree (PhD)", withSpouse: 10, withoutSpouse: 0}
+];
+
+export const SPOUSE_CLB_LEVELS: Array<PointOption> = [
+  {text: "CLB 4 or less", withSpouse: 0, withoutSpouse: 0},
+  {text: "CLB 5 or 6", withSpouse: 1, withoutSpouse: 0},
+  {text: "CLB 7 or 8", withSpouse: 3, withoutSpouse: 0},
+  {text: "CLB 9 or more", withSpouse: 5, withoutSpouse: 0},
+];
+
+export const SPOUSE_CANADIAN_WORK_EXPERIENCE: Array<PointOption> = [
+  {text: "None or less than a year", withSpouse: 0, withoutSpouse: 0},
+  {text: "1 year", withSpouse: 5, withoutSpouse: 0},
+  {text: "2 years", withSpouse: 7, withoutSpouse: 0},
+  {text: "3 years", withSpouse: 8, withoutSpouse: 0},
+  {text: "4 years", withSpouse: 9, withoutSpouse: 0},
+  {text: "5 years or more", withSpouse: 10, withoutSpouse: 0}
+];

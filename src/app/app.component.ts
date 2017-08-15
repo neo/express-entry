@@ -9,6 +9,7 @@ import {
   SPOUSE_EDUCATION_LEVELS,
   SPOUSE_CLB_LEVELS,
   SPOUSE_CANADIAN_WORK_EXPERIENCE,
+  LanguagePoints,
   PointOption
 } from './points';
 
@@ -41,39 +42,28 @@ export class AppComponent {
   spouse = false;
   age: PointOption;
   education: PointOption;
-  reading: PointOption;
-  writing: PointOption;
-  listening: PointOption;
-  speaking: PointOption;
+  language: LanguagePoints = {};
   secondLanguage = false;
-  reading2: PointOption;
-  writing2: PointOption;
-  listening2: PointOption;
-  speaking2: PointOption;
+  language2: LanguagePoints = {};
   work: PointOption;
   totalA = 0;
   spouseEducation: PointOption;
-  spouseReading: PointOption;
-  spouseWriting: PointOption;
-  spouseListening: PointOption;
-  spouseSpeaking: PointOption;
+  spouseLanguage: LanguagePoints = {};
   spouseWork: PointOption;
   totalB = 0;
+
+  languageTotal(language: LanguagePoints, spouse: ('withSpouse' | 'withoutSpouse'), isActive = true): number {
+    return Object.keys(language).reduce((total, ability) => total + (isActive && language[ability][spouse] || 0), 0);
+  }
 
   calc() {
     const spouse = this.spouse ? 'withSpouse' : 'withoutSpouse';
 
-    const language = [this.reading, this.writing, this.listening, this.speaking].reduce((total, ability) => {
-      return total + (ability && ability[spouse] || 0);
-    }, 0);
+    const language = this.languageTotal(this.language, spouse);
 
-    const language2 = [this.reading2, this.writing2, this.listening2, this.speaking2].reduce((total, ability) => {
-      return total + (this.secondLanguage && ability && ability[spouse] || 0);
-    }, 0);
+    const language2 = this.languageTotal(this.language2, spouse, this.secondLanguage);
 
-    const spouseLanguage = [this.spouseReading, this.spouseWriting, this.spouseListening, this.spouseSpeaking].reduce((total, ability) => {
-      return total + (ability && ability[spouse] || 0);
-    }, 0);
+    const spouseLanguage = this.languageTotal(this.spouseLanguage, spouse, this.spouse);
 
     this.score = {
       age: this.age && this.age[spouse] || 0,

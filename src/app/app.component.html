@@ -41,7 +41,7 @@
   <h4>first official language &mdash; score: {{ score.language }}</h4>
   <md-select
     placeholder="Reading"
-    [(ngModel)]="reading"
+    [(ngModel)]="language.reading"
     (change)="calc()"
   >
     <md-option
@@ -53,7 +53,7 @@
   </md-select>
   <md-select
     placeholder="Writing"
-    [(ngModel)]="writing"
+    [(ngModel)]="language.writing"
     (change)="calc()"
   >
     <md-option
@@ -65,7 +65,7 @@
   </md-select>
   <md-select
     placeholder="Listening"
-    [(ngModel)]="listening"
+    [(ngModel)]="language.listening"
     (change)="calc()"
   >
     <md-option
@@ -77,7 +77,7 @@
   </md-select>
   <md-select
     placeholder="Speaking"
-    [(ngModel)]="speaking"
+    [(ngModel)]="language.speaking"
     (change)="calc()"
   >
     <md-option
@@ -97,7 +97,7 @@
   <section *ngIf="secondLanguage">
     <md-select
       placeholder="Reading"
-      [(ngModel)]="reading2"
+      [(ngModel)]="language2.reading"
       (change)="calc()"
     >
       <md-option
@@ -109,7 +109,7 @@
     </md-select>
     <md-select
       placeholder="Writing"
-      [(ngModel)]="writing2"
+      [(ngModel)]="language2.writing"
       (change)="calc()"
     >
       <md-option
@@ -121,7 +121,7 @@
     </md-select>
     <md-select
       placeholder="Listening"
-      [(ngModel)]="listening2"
+      [(ngModel)]="language2.listening"
       (change)="calc()"
     >
       <md-option
@@ -133,7 +133,7 @@
     </md-select>
     <md-select
       placeholder="Speaking"
-      [(ngModel)]="speaking2"
+      [(ngModel)]="language2.speaking"
       (change)="calc()"
     >
       <md-option
@@ -179,7 +179,7 @@
   <h3>Spouse's official languages proficiency &mdash; Score: {{ score.spouseLanguage }}</h3>
   <md-select
     placeholder="Reading"
-    [(ngModel)]="spouseReading"
+    [(ngModel)]="spouseLanguage.reading"
     (change)="calc()"
   >
     <md-option
@@ -191,7 +191,7 @@
   </md-select>
   <md-select
     placeholder="Writing"
-    [(ngModel)]="spouseWriting"
+    [(ngModel)]="spouseLanguage.writing"
     (change)="calc()"
   >
     <md-option
@@ -203,7 +203,7 @@
   </md-select>
   <md-select
     placeholder="Listening"
-    [(ngModel)]="spouseListening"
+    [(ngModel)]="spouseLanguage.listening"
     (change)="calc()"
   >
     <md-option
@@ -215,7 +215,7 @@
   </md-select>
   <md-select
     placeholder="Speaking"
-    [(ngModel)]="spouseSpeaking"
+    [(ngModel)]="spouseLanguage.speaking"
     (change)="calc()"
   >
     <md-option

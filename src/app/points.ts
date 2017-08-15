@@ -4,6 +4,13 @@ export class PointOption {
   withoutSpouse: number;
 }
 
+export class LanguagePoints {
+  reading?: PointOption;
+  writing?: PointOption;
+  listening?: PointOption;
+  speaking?: PointOption;
+}
+
 export const AGES: Array<PointOption> = [
   {text: '17 or less', withSpouse: 0, withoutSpouse: 0},
   {text: '18', withSpouse: 90, withoutSpouse: 99},

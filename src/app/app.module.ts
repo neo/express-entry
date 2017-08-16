@@ -10,9 +10,11 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { LanguageComponent } from './language/language.component';
 
 @NgModule({
   declarations: [
+    LanguageComponent,
     AppComponent
   ],
   imports: [

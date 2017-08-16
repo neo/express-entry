@@ -39,54 +39,11 @@
 
   <h3>Official languages proficiency</h3>
   <h4>first official language &mdash; score: {{ score.language }}</h4>
-  <md-select
-    placeholder="Reading"
-    [(ngModel)]="language.reading"
+  <ee-language
+    [(ngModel)]="language"
+    [levels]="clbLevels"
     (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of clbLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Writing"
-    [(ngModel)]="language.writing"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of clbLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Listening"
-    [(ngModel)]="language.listening"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of clbLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Speaking"
-    [(ngModel)]="language.speaking"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of clbLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
+  ></ee-language>
   <md-slide-toggle
     [(ngModel)]="secondLanguage"
     (change)="calc()"
@@ -95,54 +52,11 @@
     <h4>second official language &mdash; score: {{ score.language2 }}</h4>
   </md-slide-toggle>
   <section *ngIf="secondLanguage">
-    <md-select
-      placeholder="Reading"
-      [(ngModel)]="language2.reading"
+    <ee-language
+      [(ngModel)]="language2"
+      [levels]="clbLevels2"
       (change)="calc()"
-    >
-      <md-option
-        *ngFor="let level of clbLevels2"
-        [value]="level"
-      >
-        {{ level.text }}
-      </md-option>
-    </md-select>
-    <md-select
-      placeholder="Writing"
-      [(ngModel)]="language2.writing"
-      (change)="calc()"
-    >
-      <md-option
-        *ngFor="let level of clbLevels2"
-        [value]="level"
-      >
-        {{ level.text }}
-      </md-option>
-    </md-select>
-    <md-select
-      placeholder="Listening"
-      [(ngModel)]="language2.listening"
-      (change)="calc()"
-    >
-      <md-option
-        *ngFor="let level of clbLevels2"
-        [value]="level"
-      >
-        {{ level.text }}
-      </md-option>
-    </md-select>
-    <md-select
-      placeholder="Speaking"
-      [(ngModel)]="language2.speaking"
-      (change)="calc()"
-    >
-      <md-option
-        *ngFor="let level of clbLevels2"
-        [value]="level"
-      >
-        {{ level.text }}
-      </md-option>
-    </md-select>
+    ></ee-language>
   </section>
 
   <h3>Canadian work experience &mdash; Score: {{ score.work }}</h3>
@@ -177,54 +91,11 @@
   </md-radio-group>
 
   <h3>Spouse's official languages proficiency &mdash; Score: {{ score.spouseLanguage }}</h3>
-  <md-select
-    placeholder="Reading"
-    [(ngModel)]="spouseLanguage.reading"
+  <ee-language
+    [(ngModel)]="spouseLanguage"
+    [levels]="spouseCLBLevels"
     (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of spouseCLBLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Writing"
-    [(ngModel)]="spouseLanguage.writing"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of spouseCLBLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Listening"
-    [(ngModel)]="spouseLanguage.listening"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of spouseCLBLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
-  <md-select
-    placeholder="Speaking"
-    [(ngModel)]="spouseLanguage.speaking"
-    (change)="calc()"
-  >
-    <md-option
-      *ngFor="let level of spouseCLBLevels"
-      [value]="level"
-    >
-      {{ level.text }}
-    </md-option>
-  </md-select>
+  ></ee-language>
 
   <h3>Spouse's Canadian work experience &mdash; Score: {{ score.spouseWork }}</h3>
   <md-select

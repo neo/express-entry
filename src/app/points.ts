@@ -103,3 +103,14 @@ export const SPOUSE_CANADIAN_WORK_EXPERIENCE: Array<PointOption> = [
 
 export const SECTION_C_POINTS = [13, 25, 50];
 export const FOREIGN_WORK_EXPERIENCE = ['No foreign work experience', '1 or 2 years of foreign work experience', '3 years or more of foreign work experience'];
+
+export const SECTION_D_POINTS = {
+  'Brother or sister living in Canada who is a citizen or permanent resident of Canada': 15,
+  'Scored NCLC 7 or higher on all four French language skills and scored CLB 4 or lower in English (or didn’t take an English test)': 15,
+  'Scored NCLC 7 or higher on all four French language skills and scored CLB 5 or higher on all four English skills': 30,
+  'Post-secondary education in  Canada - credential of one or two years': 15,
+  'Post-secondary education in  Canada - credential three years or longer': 30,
+  'Arranged employment - NOC 00': 200,
+  'Arranged employment – any other NOC 0, A or B': 50,
+  'Provincial or territorial nomination': 600
+};

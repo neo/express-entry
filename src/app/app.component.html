@@ -270,3 +270,19 @@
   <h4>Foreign work experience – With Canadian work experience &mdash; score: {{ score.c4 }}</h4>
   <h4>Certificate of qualification – With good official language proficiency &mdash; score: {{ score.c5 }}</h4>
 </section>
+
+<section>
+  <h2>CRS – D. Additional points &mdash; Total Score: {{ totalD }}</h2>
+
+  <md-slide-toggle
+    *ngFor="let addition of additionalPoints; let i = index"
+    [(ngModel)]="sectionD[i]"
+    (change)="calc()"
+  >
+    {{ addition }} &mdash; score: {{ score.sectionD[i] }}
+  </md-slide-toggle>
+</section>
+
+<footer>
+  <h1>Total Score: {{ scoreTotal }}</h1>
+</footer>

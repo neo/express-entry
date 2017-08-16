@@ -13,6 +13,7 @@ import {
   FOREIGN_WORK_EXPERIENCE,
   LANGUAGE_ABILITIES,
   SECTION_C_POINTS,
+  SECTION_D_POINTS,
   PointOption
 } from './points';
 
@@ -31,6 +32,7 @@ export class AppComponent {
   spouseCLBLevels = SPOUSE_CLB_LEVELS;
   spouseWorkExperience = SPOUSE_CANADIAN_WORK_EXPERIENCE;
   foreignWorkExperience = FOREIGN_WORK_EXPERIENCE;
+  additionalPoints = Object.keys(SECTION_D_POINTS);
 
   score = {
     age: 0,
@@ -46,6 +48,7 @@ export class AppComponent {
     c3: 0,
     c4: 0,
     c5: 0,
+    sectionD: Array(this.additionalPoints.length).fill(0)
   };
 
   spouse = false;
@@ -63,6 +66,9 @@ export class AppComponent {
   foreignWork: string;
   hasCertificateOfQualification = false;
   totalC = 0;
+  sectionD: Array<boolean> = [];
+  totalD = 0;
+  scoreTotal = 0;
 
   languageTotal(language: LanguagePoints, spouse: ('withSpouse' | 'withoutSpouse'), isActive = true): number {
     return Object.keys(language).reduce((total, ability) => total + (isActive && language[ability][spouse] || 0), 0);
@@ -169,6 +175,8 @@ export class AppComponent {
 
     const sectionC = this.sectionC();
 
+    const sectionD = this.additionalPoints.map((key, i) => this.sectionD[i] ? SECTION_D_POINTS[key] : 0);
+
     this.score = {
       age: this.age && this.age[spouse] || 0,
       education: this.education && this.education[spouse] || 0,
@@ -178,10 +186,13 @@ export class AppComponent {
       spouseLanguage,
       spouseWork: this.spouseWork && this.spouseWork[spouse] || 0,
       ...sectionC,
+      sectionD
     };
 
     this.totalA = this.score.age + this.score.education + this.score.language + this.score.language2 + this.score.work;
     this.totalB = this.spouse ? this.score.spouseEducation + this.score.spouseLanguage + this.score.spouseWork : 0;
     this.totalC = Math.min(Object.keys(sectionC).reduce((total, subsection) => total += sectionC[subsection], 0), 100);
+    this.totalD = Math.min(sectionD.reduce((prev, curr) => prev + curr), 600);
+    this.scoreTotal = this.totalA + this.totalB + this.totalC + this.totalD;
   }
 }

@@ -1,3 +1,7 @@
 .mat-select {
   min-width: 8rem;
+
+  /deep/ .mat-select-placeholder {
+    text-transform: capitalize;
+  }
 }

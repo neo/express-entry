@@ -1,7 +1,7 @@
 import { Component, forwardRef, Input, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { PointOption, LanguagePoints } from '../points';
+import { LANGUAGE_ABILITIES, PointOption, LanguagePoints } from '../points';
 
 @Component({
   providers: [{
@@ -18,6 +18,7 @@ export class LanguageComponent implements ControlValueAccessor {
   @Input() levels: Array<PointOption>;
   @Output() change = new EventEmitter<LanguagePoints>();
 
+  abilities = LANGUAGE_ABILITIES;
   language: LanguagePoints = {};
   onChange: any;
   onTouched: any;

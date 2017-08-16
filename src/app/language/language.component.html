@@ -1,42 +1,7 @@
 <md-select
-  placeholder="Reading"
-  [(ngModel)]="language.reading"
-  (change)="calc()"
->
-  <md-option
-    *ngFor="let level of levels"
-    [value]="level"
-  >
-    {{ level.text }}
-  </md-option>
-</md-select>
-<md-select
-  placeholder="Writing"
-  [(ngModel)]="language.writing"
-  (change)="calc()"
->
-  <md-option
-    *ngFor="let level of levels"
-    [value]="level"
-  >
-    {{ level.text }}
-  </md-option>
-</md-select>
-<md-select
-  placeholder="Listening"
-  [(ngModel)]="language.listening"
-  (change)="calc()"
->
-  <md-option
-    *ngFor="let level of levels"
-    [value]="level"
-  >
-    {{ level.text }}
-  </md-option>
-</md-select>
-<md-select
-  placeholder="Speaking"
-  [(ngModel)]="language.speaking"
+  *ngFor="let ability of abilities"
+  placeholder="{{ ability }}"
+  [(ngModel)]="language[ability]"
   (change)="calc()"
 >
   <md-option

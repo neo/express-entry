@@ -11,6 +11,8 @@ export class LanguagePoints {
   speaking?: PointOption;
 }
 
+export const LANGUAGE_ABILITIES = ['reading', 'writing', 'listening', 'speaking'];
+
 export const AGES: Array<PointOption> = [
   {text: '17 or less', withSpouse: 0, withoutSpouse: 0},
   {text: '18', withSpouse: 90, withoutSpouse: 99},
@@ -47,7 +49,8 @@ export const EDUCATION_LEVELS: Array<PointOption> = [
 
 export const CLB_LEVELS: Array<PointOption> = [
   {text: 'Less than CLB 4', withSpouse: 0, withoutSpouse: 0},
-  {text: 'CLB 4 or 5', withSpouse: 6, withoutSpouse: 6},
+  {text: 'CLB 4', withSpouse: 6, withoutSpouse: 6},
+  {text: 'CLB 5', withSpouse: 6, withoutSpouse: 6},
   {text: 'CLB 6', withSpouse: 8, withoutSpouse: 9},
   {text: 'CLB 7', withSpouse: 16, withoutSpouse: 17},
   {text: 'CLB 8', withSpouse: 22, withoutSpouse: 23},
@@ -97,3 +100,6 @@ export const SPOUSE_CANADIAN_WORK_EXPERIENCE: Array<PointOption> = [
   {text: '4 years', withSpouse: 9, withoutSpouse: 0},
   {text: '5 years or more', withSpouse: 10, withoutSpouse: 0}
 ];
+
+export const SECTION_C_POINTS = [13, 25, 50];
+export const FOREIGN_WORK_EXPERIENCE = ['No foreign work experience', '1 or 2 years of foreign work experience', '3 years or more of foreign work experience'];

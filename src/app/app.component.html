@@ -240,3 +240,33 @@
     </md-option>
   </md-select>
 </section>
+
+<section>
+  <h2>CRS – C. Skill transferability factors &mdash; Total Score: {{ totalC }}</h2>
+
+  <md-select
+    placeholder="Foreign Work Experience"
+    [(ngModel)]="foreignWork"
+    (change)="calc()"
+  >
+    <md-option
+      *ngFor="let level of foreignWorkExperience"
+      [value]="level"
+    >
+      {{ level }}
+    </md-option>
+  </md-select>
+
+  <md-slide-toggle
+    [(ngModel)]="hasCertificateOfQualification"
+    (change)="calc()"
+  >
+    <h3>Certificate of qualification (trade occupations)</h3>
+  </md-slide-toggle>
+
+  <h4>With good official language proficiency and a post-secondary degree &mdash; score: {{ score.c1 }}</h4>
+  <h4>With Canadian work experience and a post-secondary degree &mdash; score: {{ score.c2 }}</h4>
+  <h4>Foreign work experience – With good official language proficiency &mdash; score: {{ score.c3 }}</h4>
+  <h4>Foreign work experience – With Canadian work experience &mdash; score: {{ score.c4 }}</h4>
+  <h4>Certificate of qualification – With good official language proficiency &mdash; score: {{ score.c5 }}</h4>
+</section>
